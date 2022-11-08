@@ -19,7 +19,7 @@ module.exports = {
     },
     plugins: ["eslint-plugin-prettier"],
     rules: {
-        // "prettier/prettier": ["error"]
+        "prettier/prettier": ["error"]
     },
     overrides: [
         {
@@ -39,11 +39,11 @@ module.exports = {
             },
             plugins: ["eslint-plugin-vue"],
             rules: {
-                // "@typescript-eslint/no-explicit-any": "off",
-                // "@typescript-eslint/explicit-function-return-type": "off",
-                // "@typescript-eslint/no-this-alias": "off",
-                // "@typescript-eslint/explicit-function-return-type": "off",
-                // "vue/html-indent": "off"
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/no-this-alias": "off",
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "vue/html-indent": "off"
             }
         }
     ]
