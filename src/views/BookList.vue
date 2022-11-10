@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BookCard from './BookCard.vue'
+import BookCard from '../components/BookCard.vue'
 import { useBooksStore } from '../stores/books'
 
 const store = useBooksStore();
@@ -10,7 +10,9 @@ store.list();
 <template>
   <div>
     <h1>書本列表</h1>
-    <span class="text-blue-500 text-5xl absolute top-10 right-10 cursor-pointer">+</span>
+    <router-link :to="{ name: 'add' }">
+      <span class="text-blue-500 text-5xl absolute top-10 right-10 cursor-pointer">+</span>
+    </router-link>
   </div>
   <div class="flex flex-wrap justify-center w-full">
     <router-link v-for="(item, index) in store.books" :key="index" :book="item" :to="{ name: 'detail', params: { id: item.id } }">

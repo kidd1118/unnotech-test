@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BookList from './components/BookList.vue'
-import BookDetail from './components/BookDetail.vue'
+import BookList from './views/BookList.vue'
+import BookDetail from './views/BookDetail.vue'
 
 const views = {
     list: BookList,

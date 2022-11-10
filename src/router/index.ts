@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
-import list from "../components/BookList.vue";
-import detail from "../components/BookDetail.vue";
+import list from "../views/BookList.vue";
+import detail from "../views/BookDetail.vue";
+import add from "../views/BookAdd.vue";
 
 const routes = [
   { path: "/", redirect: "/books" },
@@ -14,6 +15,11 @@ const routes = [
     name: "detail",
     component: detail,
     props: true
+  },
+  {
+    path: "/books/add",
+    name: "add",
+    component: add
   }
 ];
 

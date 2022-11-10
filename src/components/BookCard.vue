@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { ref, defineProps } from 'vue'
-import defaultImg from '../assets/book.png'
+import bookIcon from '../assets/book.png'
 import { book } from '../types/book'
 
 const props = defineProps<{ book: any}>() //TODO: using book type
 
 const title = ref(props.book.title)
-const image = ref(props.book.image || defaultImg)
+const image = ref(props.book.image || bookIcon)
 const author = ref(props.book.author)
 
-console.log("aaaaaaa", props.book)
 </script>
 
 <template>

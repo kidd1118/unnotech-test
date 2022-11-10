@@ -15,6 +15,7 @@
 - servers
 - stores
 - types
+- views
 
 ### Conventions
 - eslint
@@ -31,15 +32,10 @@
 
 ### Done
 - List Book
-
-### In Progress
 - Detail Book
-### Todo
+### In Progress
 - Add Book
+### Todo
 - Edit Book
-- Delete Book
-
-### Bugs
-- Detail display previous book information
 
 ## Continue ...
