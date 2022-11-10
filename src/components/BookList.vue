@@ -13,9 +13,16 @@ store.list();
     <span class="text-blue-500 text-5xl absolute top-10 right-10 cursor-pointer">+</span>
   </div>
   <div class="flex flex-wrap justify-center w-full">
-    <BookCard v-for="(item, index) in store.books" :key="index" :book="item"/>
+    <router-link v-for="(item, index) in store.books" :key="index" :book="item" :to="{ name: 'detail', params: { id: item.id } }">
+      <div class="card m-8 p-8 flex flex-col max-w-sm cursor-pointer drop-shadow-lg box-border bg-white">
+        <BookCard :book="item"/>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <style scoped>
+.card:hover {
+  filter: drop-shadow(0 0 2em gray);
+}
 </style>

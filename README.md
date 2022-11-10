@@ -3,7 +3,7 @@
 ## Run Project
 ```
     npm install
-    npm run
+    npm run dev
 ```
 
 ## Structure
@@ -29,15 +29,17 @@
 
 ## Features
 
-### DONE
+### Done
 - List Book
 
 ### In Progress
 - Detail Book
-
-### TODO
+### Todo
 - Add Book
 - Edit Book
 - Delete Book
+
+### Bugs
+- Detail display previous book information
 
 ## Continue ...

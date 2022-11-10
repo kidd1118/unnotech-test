@@ -4,7 +4,8 @@ import { book } from '../types/book'
 
 export const useBooksStore = defineStore('books', {
   state: () => ({
-    books: Array<book>,
+    books: [] as Array<book>,
+    book: {} as book
   }),
   actions: {
     async list() {
@@ -12,11 +13,9 @@ export const useBooksStore = defineStore('books', {
         this.books = res.data;
       })
     },
-    async detail(bookId: number): Promise<book> {
-      let result: book;
-      return await http.request({ url: 'https://fe-interview-api.unnotech.com/books/' + bookId }).then((res) => {
-        result = res.data as book;
-        return result;
+    async detail(bookId: number) {
+      await http.request({ url: `https://fe-interview-api.unnotech.com/books/${bookId}` }).then((res) => {
+        this.book = res.data as book;  
       })
     },
     async add(payload: any) {

@@ -3,17 +3,18 @@ import list from "../components/BookList.vue";
 import detail from "../components/BookDetail.vue";
 
 const routes = [
-  { path: "/", redirect: "/list" },
+  { path: "/", redirect: "/books" },
   {
-    path: "/list",
+    path: "/books",
     name: "list",
-    component: list,
+    component: list
   },
   {
-    path: "/detail",
+    path: "/books/:id",
     name: "detail",
     component: detail,
-  },
+    props: true
+  }
 ];
 
 const router = createRouter({
