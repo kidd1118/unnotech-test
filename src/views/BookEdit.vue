@@ -6,17 +6,23 @@ import { reactive } from 'vue';
 
 const store = useBooksStore();
 
+const form = reactive({
+  title: store.book.title,
+  author: store.book.author,
+  description: store.book.description
+})
+
 const cancel = () => {
-  router.push({name: 'list'})
+  router.push({ name: 'detail', params: { id: store.book.id }})
 };
 
-const confirm = (e: any) => {
-  store.add({
+const confirm = () => {
+  store.edit(store.book.id, {
     title: form.title,
     author: form.author,
     description: form.description
   }); 
-  router.push({name: 'list'})
+  router.push({ name: 'detail', params: { id: store.book.id }})
 };
 
 defineRule("required", (value: string | any[]) => {
@@ -26,22 +32,17 @@ defineRule("required", (value: string | any[]) => {
   return true;
 });
 
-const form = reactive({
-  title: "",
-  author: "",
-  description: ""
-})
-
 </script>
 
 <template>
   <div class="flex justify-center h-20">
-    <router-link :to="{ name: 'list' }">
+    <router-link :to="{ name: 'detail', params: { id: store.book.id }}">
       <span class="text-blue-500 text-5xl absolute top-10 left-10 cursor-pointer">&lt;</span>
     </router-link>
-    <h1 class="absolute top-10">新增書本</h1>
+    <h1 class="absolute top-10">編輯書本</h1>
   </div>
   <div class="flex flex-col items-center m-10 w-80">
+    <img class="h-full w-80 object-cover" :src="store.book.image" alt="book.title"/>
     <Form @submit="confirm" class="flex flex-col items-center m-10 w-full">
       <Field v-model="form.title" rules="required" name="title" as="input" type="text" placeholder="名稱" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 m-5" required/>
       <ErrorMessage name="title" />

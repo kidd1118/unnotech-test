@@ -19,10 +19,14 @@ export const useBooksStore = defineStore('books', {
       })
     },
     async add(payload: any) {
-
+      await http.request({ method: "POST", url: `https://fe-interview-api.unnotech.com/books/` }, payload).then((res) => {
+        //this.book = res.data as book;  
+      })
     },
     async edit(bookId: number, payload: any) {
-
+      await http.request({ method: "PATCH", url: `https://fe-interview-api.unnotech.com/books/${bookId}` }, payload).then((res) => {
+        this.book = res.data as book;  
+      })
     },
     async delete(bookId: number) {
 

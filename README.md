@@ -33,9 +33,16 @@
 ### Done
 - List Book
 - Detail Book
-### In Progress
 - Add Book
-### Todo
 - Edit Book
+### In Progress
+- None
+### Todo
+- None
+
+### Future
+- Delete Book
+- UI Fine Tune
+- Component Re-use
 
 ## Continue ...

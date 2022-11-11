@@ -8,8 +8,8 @@ store.list();
 </script>
 
 <template>
-  <div>
-    <h1>書本列表</h1>
+  <div class="flex justify-center h-20">
+    <h1 class="absolute top-10">書本列表</h1>
     <router-link :to="{ name: 'add' }">
       <span class="text-blue-500 text-5xl absolute top-10 right-10 cursor-pointer">+</span>
     </router-link>

@@ -16,7 +16,7 @@ class Axios {
         const { requestOptions } = this.options
         const opt: RequestOptions = Object.assign({}, requestOptions, options)
         conf.requestOptions = opt
-
+        conf.data = opt;
         return new Promise((resolve, reject) => {
             this.instance
                 .request<any, AxiosResponse<Result>>(conf)
